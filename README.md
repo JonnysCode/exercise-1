@@ -77,11 +77,11 @@ Run with [Gradle 7.4](https://gradle.org/):
 
 To start the main container only with the Room Environment Agent (required for Task 1):
 ```shell
-./gradlew runEnv
+./gradlew.bat runEnv
 ```
 To start the main container with all the agents in the environment (required for Task 2):
 ```shell
-./gradlew runRoomAll
+./gradlew.bat runRoomAll
 ```
 
 

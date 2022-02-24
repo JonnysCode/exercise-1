@@ -56,16 +56,29 @@ public class BuildingEnvironmentAgent extends BaseAgent {
     // Receive requests for setting illuminance to low or high
     addBehaviour(new SetIlluminanceServer());
 
-    // TODO Add a behavior, such that the agent periodically prints the illuminance and the weather on the environment (Task 1)
+    // TODO: Add a behavior, such that the agent periodically prints the illuminance and the weather on the environment (Task 1)
     // HINT: Use the method addBehaviour(). As input, provide an instance of the Behaviour class
     // that you implemented below
+    addBehaviour(new PrintEnvironment(this, 1000));
   }
 
-  // TODO Implement a Behaviour for periodically printing the illuminance and the weather on the environment (Task 1)
+  // TODO: Implement a Behaviour for periodically printing the illuminance and the weather on the environment (Task 1)
   // HINT 1: Implement an inner class that extends TickerBehavior
   // (see https://jade.tilab.com/doc/api/jade/core/behaviours/TickerBehaviour.html).
   // HINT 2: Use the instance attributes illuminance and weather to print the conditions of the environment
   // HINT 3: The inner class NotificationServer (see line 158) also extends TickerBehavior
+  private class PrintEnvironment extends TickerBehaviour {
+
+    public PrintEnvironment(Agent a, long period) {
+      super(a, period);
+    }
+
+    @Override
+    protected void onTick() {
+      LOGGER.info("ILLUMINANCE: " + illuminance);
+      LOGGER.info("WEATHER: " + weather);
+    }
+  }
 
   public String getIlluminance() {
     return illuminance;
