@@ -59,7 +59,7 @@ public class BuildingEnvironmentAgent extends BaseAgent {
     // TODO: Add a behavior, such that the agent periodically prints the illuminance and the weather on the environment (Task 1)
     // HINT: Use the method addBehaviour(). As input, provide an instance of the Behaviour class
     // that you implemented below
-    addBehaviour(new PrintEnvironment(this, 1000));
+    addBehaviour(new PrintEnvironment(this, 5000));
   }
 
   // TODO: Implement a Behaviour for periodically printing the illuminance and the weather on the environment (Task 1)
